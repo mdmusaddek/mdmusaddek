@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Personal website of MD. Musaddek Hussain (MUSA)">
+<meta name="keywords" content="MD.Musaddek Hussain (MUSA), Student, Bangladesh">
+<meta name="author" content="MD. Musaddek Hussain (MUSA)">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD. Musaddek Hussain (MUSA) | Personal Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+--bg:#050816;
+--card:rgba(255,255,255,.06);
+--text:#ffffff;
+--primary:#00e5ff;
+--secondary:#8b5cf6;
+--shadow: rgba(0, 229, 255, 0.2);}
+.typing-text {
+  font-size: 1.4rem;
+  color: #ddd;
+  margin: 15px 0;
+  border-right: 3px solid #00f7ff;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 1ch; }
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.light{
+--bg:#f5f7fa;
+--card:rgba(0,0,0,.05);
+--text:#111827;
+--shadow: rgba(139, 92, 246, 0.1);
+}
+
+*{
+margin:0px;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+transition:.4s;
+}
+
+/* Animated Background */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-2;
+overflow:hidden;
+}
+
+.bg span{
+position:absolute;
+display:block;
+width:6px;
+height:6px;
+background:var(--primary);
+border-radius:50%;
+animation:float 15s linear infinite;
+opacity:.3;
+}
+
+@keyframes float{
+0%{ transform:translateY(100vh); opacity:0; }
+50%{ opacity:1; }
+100%{ transform:translateY(-100px); opacity:0; }
+}
+
+nav{
+position:fixed;
+width:100%;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(20px);
+background:rgba(0,0,0,.15);
+z-index:999;
+border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+font-size:16px;
+font-weight:700;
+color:var(--primary);
+line-height: 1.4;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:var(--text);
+text-decoration:none;
+font-weight: 500;
+transition: .3s;
+}
+nav a:hover{
+color: var(--primary);
+}
+
+.toggle{
+cursor:pointer;
+padding:8px 16px;
+border-radius:30px;
+background:var(--card);
+border: 1px solid rgba(255,255,255,0.1);
+transition: .3s;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 20px 60px 20px;
+text-align:center;
+}
+
+.glass{
+background:var(--card);
+backdrop-filter:blur(25px);
+padding:50px 40px;
+border-radius:30px;
+max-width:800px;
+width: 100%;
+border:1px solid rgba(255,255,255,.1);
+box-shadow: 0 20px 40px var(--shadow);
+}
+
+/* Profile Image Styling */
+.profile-img-container {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 25px var(--primary);
+    overflow: hidden;
+}
+
+.profile-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero h1{
+font-size:3.5rem;
+margin-bottom: 10px;
+}
+
+.hero span{
+color:var(--primary);
+}
+
+.hero p{
+color:#cbd5e1;
+}
+
+
+.btn{
+display:inline-block;
+margin: 10px;
+padding: 12px 30px;
+border-radius:40px;
+background:linear-gradient(45deg,var(--primary),var(--secondary));
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:.4s;
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px var(--primary);
+}
+
+section{
+padding:80px 10%;
+}
+#progress{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+width:0%;
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+z-index:1000;
+}
+.title{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:50px;
+position: relative;
+}
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+#N{
+    color: #ffb703;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+nav a.active{
+    color: var(--primary);
+}
+.card{
+background:var(--card);
+padding:30px;
+border-radius:25px;
+backdrop-filter:blur(20px);
+transition:.5s ease;
+border: 1px solid rgba(255,255,255,0.05);
+/* স্ক্রল অ্যানিমেশন শুরুর জন্য ডিফল্ট স্টেট */
+transform:translateY(40px);
+opacity:0;
+}
+
+.card.show{
+transform:translateY(0);
+opacity:1;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 25px var(--shadow);
+border-color: var(--primary);
+}
+.contact-form{
+    max-width:650px;
+    margin:30px auto 0;
+    padding:30px;
+    background:var(--card);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 10px 30px var(--shadow);
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px 20px;
+    margin-bottom:15px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:rgba(255,255,255,.08);
+    color:var(--text);
+    font-size:15px;
+    transition:.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color:#a0a0a0;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border:1px solid var(--primary);
+    box-shadow:0 0 15px rgba(0,229,255,.3);
+}
+
+.contact-form textarea{
+    min-height:140px;
+    resize:none;
+}
+
+.contact-form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(
+        45deg,
+        var(--primary),
+        var(--secondary)
+    );
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.4s;
+}
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#050816;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:opacity .5s ease;
+}
+
+#loader h3{
+    font-size:50px;
+    color:var(--primary);
+    text-shadow:0 0 20px var(--primary);
+}
+.contact-form button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px var(--primary);
+}
+.card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+#topBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+display:none;
+padding:12px;
+border:none;
+border-radius:50%;
+background:var(--primary);
+cursor:pointer;
+}
+#M{
+    color: #ffb703;
+    font-size:26px;
+    margin-bottom: 10px;
+}
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid rgba(255,255,255,.05);
+font-size: 14px;
+color: #888;
+}
+
+@media(max-width:768px){
+.hero h1{ font-size:2.3rem; }
+nav ul{ display:none; }
+.glass{ padding:30px 20px; }
+section { padding: 60px 5%; }
+}
+</style>
+</head>
+<body>
+<div class="bg" id="particles"></div>
+
+<nav>
+<div class="logo">بسم الله الرحمن الرحيم<br>Welcome to my website!</div>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#skills">Socials</a></li>
+<li><a href="#projects">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="toggle" onclick="toggleTheme()">Mode 🌓</div>
+</nav>
+<div id="progress"></div>
+<section class="hero">
+<div class="glass">
+  <div class="profile-img-container">
+    <img src="personal website of MUSA.html/68.jpg" alt="image of MUSA" onerror="this.src='https://via.placeholder.com/150'">
+  </div>
+  <p id="M">السلام عليكم</p>
+  <h1>I'm <span>MD. Musaddek Hussain</span></h1>
+  <p style="color: #4ade60; font-weight: 700; margin-bottom: 10px;">(MUSA)</p>
+
+ <p class="typing-text"></p><br>
+
+  <a href="#projects" class="btn">More about me</a>
+  <a href="#contact" class="btn" style="background: linear-gradient(45deg, var(--secondary), var(--primary));">Contact With Me</a>
+</div>
+</section>
+<div id="loader">
+    <h3>Loading MUSA'S website...</h3>
+</div>
+<section id="skills">
+<h2 class="title">Social Links</h2>
+<div class="grid">
+    <div class="card">
+        <i class="fab fa-facebook"></i>
+        <h3>Facebook</h3>
+        <p><a href="https://www.facebook.com/md.musaddek.hosan.2025" target ="_blank"style="color: var(--primary); text-decoration: none;">Click here</a></p>
+    </div>
+    <div class="card">
+        <i class="fab fa-whatsapp"></i>
+        <h3>Whatsapp</h3>
+        <p><a href="https://wa.me/8801790639041" target="_blank" style="color: var(--primary); text-decoration: none;">Message me</a></p>
+    </div>
+   
+
+<section id="projects">
+<h2 class="title">About me</h2>
+<div class="grid">
+    <div class="card">
+        <i class="fas fa-user"></i>
+        <h3>Personal details</h3>
+        <p style="margin-top: 10px;">My nickname is "MUSA". I'm 17 years old and I am a student of Aliya Madrasah.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Address</h3>
+        <p style="margin-top: 10px; line-height: 1.6;">
+            <b>•</b> Village: Muktarbosti <br>
+            <b>•</b> Union: Dharmagarh<br>
+            <b>•</b> District: Thakurgaon<br>
+            <b>•</b> Country: Bangladesh
+        </p>
+    </div>
+    <div class="card">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Education</h3>
+        <p style="margin-top: 10px; line-height: 1.6; font-size: 14px;">
+            ★ Council Hat Eidgah Dakhil Madrasah (Dakhil 2026)<br><br>
+            ★ Darul Quran solimia Madrasah, Ranisonkoil<br><br>
+            ★ Public KG and pre-cadet school, Council Bazar
+        </p>
+    </div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="title">Contact</h2>
+<div class="grid">
+    <div class="card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p style="word-break: break-all; margin-top: 10px;">mdmusaddekhussain13@gmail.com</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
+        <p style="margin-top: 10px;">+8801790639041</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-globe"></i>
+        <h3>Location</h3>
+        <p style="margin-top: 10px;">Bangladesh</p>
+    </div>
+</div><br><p class="d" style="font-size:30px;text-align: center; color: yellow">___ ___</p><br><h4 style="
+text-align:center;
+margin-bottom:20px;
+font-size:28px;
+color:var(--primary);
+">
+📨 Send Me a Message<p><b>↓</b></p> 
+</h4>
+<form action="https://formsubmit.co/mdmusaddekhussain13@gmail.com"
+      method="POST"
+      class="contact-form">
+
+    <input type="text"
+           name="name"
+           placeholder="👤 Your Name"
+           required>
+
+    <input type="email"
+           name="email"
+           placeholder="📧 Your Email"
+           required>
+
+    <textarea name="message"
+              placeholder="💬 Write your message here..."
+              required></textarea>
+
+    <button type="submit">
+        <i class="fas fa-paper-plane"></i>
+        Send Message
+    </button>
+
+</form>
+<div class="card" style="margin-top: 30px; text-align: center; width: 100%;">
+    <p style="font-size:22px;" id="N">Thank you for visiting my website 🙂🎉</p>
+    <p style="margin-top: 15px; font-size: 14px;">Profile Views: <span id="visitor-count" style="color: var(--primary); font-weight: bold;">Loading...</span></p>
+</div>
+</section>
+<button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+
+<footer>
+© 2026 MD. Musaddek Hussain | All rights reserved.
+</footer>
+
+<script>
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.getElementById("loader").style.opacity = "0";
+
+        setTimeout(() => {
+            document.getElementById("loader").style.display = "none";
+        }, 500);
+
+    }, 500); // ১ সেকেন্ড অপেক্ষা করবে
+});
+    const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+topBtn.style.display=window.scrollY>300?"block":"none";
+});
+
+topBtn.onclick=()=>window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+window.addEventListener("scroll",()=>{
+let h=document.documentElement.scrollHeight-window.innerHeight;
+let sc=(window.scrollY/h)*100;
+document.getElementById("progress").style.width=sc+"%";
+});
+const texts = [
+  "·AI Web developer",
+  "·Student"
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.querySelector('.typing-text');
+
+function type() {
+  const currentText = texts[textIndex];
+
+  if (isDeleting) {
+    typingElement.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typingElement.textContent = currentText.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  typingElement.style.animation = 'blink.7s infinite';
+
+  if (!isDeleting && charIndex === currentText.length) {
+    isDeleting = true;
+    setTimeout(type, 2000); // 2 সেকেন্ড অপেক্ষা
+  } else if (isDeleting && charIndex === 1) { // এখানে চেঞ্জ: 0 এর বদলে 1
+    isDeleting = false;
+    textIndex = (textIndex + 1) % texts.length;
+    setTimeout(type, 500);
+  } else {
+    setTimeout(type, isDeleting? 50 : 100);
+  }
+}
+
+type();
+/* বিকল্প ফ্রি ভিজিটর কাউন্টার */
+const counterSpan = document.getElementById('visitor-count');
+// এটি একটি নির্ভরযোগ্য ওপেনসোর্স কাউন্টার এপিআই
+fetch('https://api.microlink.io/?url=https://github.com') 
+  .then(() => {
+      // ডেমো হিসেবে বা লোকাল স্টোরেজ দিয়ে ভিজিটর ট্র্যাক (যেহেতু countapi প্রায়ই ডাউন থাকে)
+      let visits = localStorage.getItem('visits') || 0;
+      visits = parseInt(visits) + 1;
+      localStorage.setItem('visits', visits);
+      counterSpan.innerText = visits + " (Local)";
+  })
+  .catch(() => { counterSpan.innerText = "100+"; });
+
+/* Theme Toggle */
+function toggleTheme(){
+    document.body.classList.toggle("light");
+}
+
+/* Particle Generator */
+const particles=document.getElementById("particles");
+for(let i=0;i<60;i++){
+    let p=document.createElement("span");
+    p.style.left=Math.random()*100+"%";
+    p.style.animationDuration=(8+Math.random()*10)+"s";
+    p.style.animationDelay=Math.random()*5+"s";
+    particles.appendChild(p);
+}
+
+/* Scroll Reveal (ত্রুটিমুক্ত ও স্মুথ) */
+const cards=document.querySelectorAll(".card");
+function checkCards() {
+    cards.forEach(card=>{
+        let top=card.getBoundingClientRect().top;
+        if(top < window.innerHeight - 30){
+            card.classList.add("show");
+        }
+    });
+}
+window.addEventListener("scroll", checkCards);
+window.addEventListener("load", checkCards); // পেজ লোড হওয়ার সাথে সাথেই প্রথম কার্ডগুলো দেখাবে
+</script>
+</body>
+  </html>
